@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.camera_alt), label: "Camera"),
+                icon: Icon(Icons.local_hospital), label: "Hospitals"),
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.face),
