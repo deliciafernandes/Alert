@@ -2,5 +2,5 @@
 
 const String kHomePage = '/';
 const String kCameraScreen = '/CameraScreen';
-const String kCameraScreen = '/CameraScreen';
-const String kCameraScreen = '/CameraScreen';
+const String kLoginScreen = '/LoginScreen';
+const String kRegisterScreen = '/RegisterScreen';

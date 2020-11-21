@@ -18,6 +18,8 @@ class _AlertAppState extends State<AlertApp> {
       theme: AppTheme.lightTheme,
       onGenerateRoute: router.generateRoute,
       initialRoute: kHomePage,
+      // initialRoute: kLoginScreen,
+      // initialRoute: kRegisterScreen,
     );
   }
 }

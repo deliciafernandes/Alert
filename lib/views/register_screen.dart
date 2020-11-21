@@ -33,101 +33,103 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Register"),
-      ),
-      body: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                _inputField(
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Name",
-                      border: OutlineInputBorder(),
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Register"),
+        ),
+        body: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  _inputField(
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: "Name",
+                        border: OutlineInputBorder(),
+                      ),
+                      controller: _nameController,
+                      textInputAction: TextInputAction.next,
+                      textCapitalization: TextCapitalization.words,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "Please enter your name";
+                        }
+                        return null;
+                      },
                     ),
-                    controller: _nameController,
-                    textInputAction: TextInputAction.next,
-                    textCapitalization: TextCapitalization.words,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return "Please enter your name";
-                      }
-                      return null;
-                    },
                   ),
-                ),
-                _inputField(
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Phone no.",
-                      border: OutlineInputBorder(),
+                  _inputField(
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: "Phone no.",
+                        border: OutlineInputBorder(),
+                      ),
+                      controller: _phoneController,
+                      textInputAction: TextInputAction.next,
+                      keyboardType: TextInputType.phone,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "Please enter a valid phone number";
+                        }
+                        return null;
+                      },
                     ),
-                    controller: _phoneController,
-                    textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.phone,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return "Please enter a valid phone number";
-                      }
-                      return null;
-                    },
                   ),
-                ),
-                _inputField(
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Email",
-                      border: OutlineInputBorder(),
+                  _inputField(
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: "Email",
+                        border: OutlineInputBorder(),
+                      ),
+                      controller: _emailController,
+                      textInputAction: TextInputAction.next,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "Please enter email";
+                        }
+                        return null;
+                      },
                     ),
-                    controller: _emailController,
-                    textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.emailAddress,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return "Please enter email";
-                      }
-                      return null;
-                    },
                   ),
-                ),
-                _inputField(
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Password",
-                      border: OutlineInputBorder(),
+                  _inputField(
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: "Password",
+                        border: OutlineInputBorder(),
+                      ),
+                      controller: _passwordController,
+                      textInputAction: TextInputAction.done,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "Please enter password";
+                        }
+                        return null;
+                      },
                     ),
-                    controller: _passwordController,
-                    textInputAction: TextInputAction.done,
-                    obscureText: true,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return "Please enter password";
-                      }
-                      return null;
-                    },
                   ),
-                ),
-                RaisedButton(
-                  onPressed: _submit,
-                  child: Text('Register'),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Text("Don't have an account ?"),
-                    FlatButton(
-                      onPressed: () {},
-                      child: Text("Register now"),
-                    ),
-                  ],
-                ),
-              ],
+                  RaisedButton(
+                    onPressed: _submit,
+                    child: Text('Register'),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Text("Don't have an account ?"),
+                      FlatButton(
+                        onPressed: () {},
+                        child: Text("Register now"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

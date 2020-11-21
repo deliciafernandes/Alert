@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
         ),
         titleSpacing: 0.0,
         title: Text(
-          'location', //TODO: add location functionality
+          'Andheri East, Mumbai.', //TODO: add location functionality
           style: TextStyle(color: Colors.grey[500]),
         ),
         actions: [

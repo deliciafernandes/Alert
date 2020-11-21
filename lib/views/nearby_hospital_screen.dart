@@ -41,6 +41,7 @@ class _NearbyHospitalScreenState extends State<NearbyHospitalScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(location.getLocation());
     return _locationData == null
         ? Center(
             child: Text("Allow location permission to view"),

@@ -33,74 +33,76 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Login"),
-      ),
-      body: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                _inputField(
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Email",
-                      border: OutlineInputBorder(),
-                    ),
-                    controller: _emailController,
-                    textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.emailAddress,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return "Please enter email";
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                _inputField(
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Password",
-                      border: OutlineInputBorder(),
-                    ),
-                    controller: _passwordController,
-                    textInputAction: TextInputAction.done,
-                    obscureText: true,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return "Please enter password";
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                RaisedButton(
-                  onPressed: _submit,
-                  child: Text('Submit'),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Text("Don't have an account ?"),
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => RegisterScreen(),
-                          ),
-                        );
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Login"),
+        ),
+        body: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  _inputField(
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: "Email",
+                        border: OutlineInputBorder(),
+                      ),
+                      controller: _emailController,
+                      textInputAction: TextInputAction.next,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "Please enter email";
+                        }
+                        return null;
                       },
-                      child: Text("Register now"),
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                  _inputField(
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: "Password",
+                        border: OutlineInputBorder(),
+                      ),
+                      controller: _passwordController,
+                      textInputAction: TextInputAction.done,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return "Please enter password";
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  RaisedButton(
+                    onPressed: _submit,
+                    child: Text('Submit'),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Text("Don't have an account ?"),
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RegisterScreen(),
+                            ),
+                          );
+                        },
+                        child: Text("Register now"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
