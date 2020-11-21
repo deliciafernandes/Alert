@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         ),
         titleSpacing: 0.0,
         title: Text(
-          'location',
+          'location', //TODO: add location functionality
           style: TextStyle(color: Colors.grey[500]),
         ),
         actions: [
@@ -31,7 +31,9 @@ class _HomePageState extends State<HomePage> {
               size: 28,
               color: Color(0xffe45858),
             ),
-            onPressed: () {},
+            onPressed: () {
+              //TODO: add map functionality
+            },
           ),
         ],
       ),
