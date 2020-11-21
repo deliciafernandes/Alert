@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage>
                       ReusableEmergencyContainer(emergency: 'Road Accident'),
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 30.0),
                   GestureDetector(
                     onTap: () {
                       //TODO: add camera functionality
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage>
                       margin: EdgeInsets.only(top: 30.0, bottom: 15.0),
                       child: Image.asset(
                         'assets/images/camera.png',
-                        width: 80.0,
+                        width: 70.0,
                         fit: BoxFit.contain,
                       ),
                       decoration: BoxDecoration(
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage>
 
   Container bottomNavBar() {
     return Container(
-      margin: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
+      margin: EdgeInsets.only(left: 55.0, right: 55.0, bottom: 20.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(40.0),
@@ -167,7 +167,8 @@ class _HomePageState extends State<HomePage>
             });
           },
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.add), label: "Feature"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.camera_alt), label: "Camera"),
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.face),
