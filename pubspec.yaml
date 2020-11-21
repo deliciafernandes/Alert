@@ -17,6 +17,7 @@ dependencies:
   camera: ^0.5.8+11
   permission_handler: ^5.0.1+1
   location: ^3.1.0
+  http: ^0.12.2
 
   cupertino_icons: ^1.0.0
   flutter_screenutil: ^3.2.0

@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:contact_picker/contact_picker.dart";
+import 'package:road_safety/utilities/get_first_letter.dart';
 
 class AddEmergencyContactsScreen extends StatefulWidget {
   @override
@@ -71,7 +72,7 @@ class _AddEmergencyContactsScreenState
   Widget _displayListOfContacts(List<Contact> _contacts) {
     return Column(
       children: _contacts.map((Contact contact) {
-        String firstLetter = _getFirstLetter(contact.fullName);
+        String firstLetter = getFirstLetter(contact.fullName);
         return ListTile(
           title: Text(contact.fullName),
           subtitle: Text(contact.phoneNumber.number),
@@ -84,9 +85,5 @@ class _AddEmergencyContactsScreenState
     );
   }
 
-  _getFirstLetter(String name) {
-    List<String> words = name.split(" ");
-    words.forEach((word) => word.trim());
-    return words[0][0] == null ? "" : words[0][0];
-  }
+
 }

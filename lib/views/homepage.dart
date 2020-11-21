@@ -49,9 +49,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: _widgetList[_index],
-      ),
+      body: _widgetList[_index],
       bottomNavigationBar: bottomNavBar(),
     );
   }
