@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// Screens
+import "./views/camera_screen.dart";
+
 void main() {
   runApp(MyApp());
 }
@@ -26,7 +29,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: CameraScreen(),
     );
   }
 }
