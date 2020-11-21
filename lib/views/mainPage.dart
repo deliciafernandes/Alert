@@ -10,7 +10,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _index = 1;
+  int _index = 2;
 
   List<Widget> _widgetList = [
     NearbyHospitalScreen(),

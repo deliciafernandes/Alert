@@ -19,10 +19,14 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> _submit() async {
     // Perform submit action
 
-    print(_emailController);
-    print(_passwordController);
     if (_formKey.currentState.validate()) {
       // Form validation success
+      try {
+        final user = await _auth.signInWithEmailAndPassword(
+            email: _emailController.text, password: _passwordController.text);
+      } catch (e) {
+        print(e);
+      }
     }
   }
 

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 
 // screens
@@ -10,25 +11,45 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _nameController = TextEditingController();
-  final _phoneController = TextEditingController();
+  // final _nameController = TextEditingController();
+  // final _phoneController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> _submit() async {
     // Perform submit action
 
     if (_formKey.currentState.validate()) {
       // Form validation success
+      try {
+        final newUser = await _auth.createUserWithEmailAndPassword(
+          email: _emailController.text,
+          password: _passwordController.text,
+        );
+      } catch (e) {
+        print(e);
+      }
 
       // if everything was a success
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => AddEmergencyContactsScreen(),
-        ),
-      );
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => AddEmergencyContactsScreen(),
+      //   ),
+      // );
     }
+  }
+
+  Widget _inputField(Widget widget) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 0.0,
+        vertical: 10.0,
+      ),
+      child: widget,
+    );
   }
 
   @override
@@ -46,40 +67,40 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  _inputField(
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: "Name",
-                        border: OutlineInputBorder(),
-                      ),
-                      controller: _nameController,
-                      textInputAction: TextInputAction.next,
-                      textCapitalization: TextCapitalization.words,
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return "Please enter your name";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                  _inputField(
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: "Phone no.",
-                        border: OutlineInputBorder(),
-                      ),
-                      controller: _phoneController,
-                      textInputAction: TextInputAction.next,
-                      keyboardType: TextInputType.phone,
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return "Please enter a valid phone number";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
+                  // _inputField(
+                  //   TextFormField(
+                  //     decoration: const InputDecoration(
+                  //       labelText: "Name",
+                  //       border: OutlineInputBorder(),
+                  //     ),
+                  //     controller: _nameController,
+                  //     textInputAction: TextInputAction.next,
+                  //     textCapitalization: TextCapitalization.words,
+                  //     validator: (value) {
+                  //       if (value.isEmpty) {
+                  //         return "Please enter your name";
+                  //       }
+                  //       return null;
+                  //     },
+                  //   ),
+                  // ),
+                  // _inputField(
+                  //   TextFormField(
+                  //     decoration: const InputDecoration(
+                  //       labelText: "Phone no.",
+                  //       border: OutlineInputBorder(),
+                  //     ),
+                  //     controller: _phoneController,
+                  //     textInputAction: TextInputAction.next,
+                  //     keyboardType: TextInputType.phone,
+                  //     validator: (value) {
+                  //       if (value.isEmpty) {
+                  //         return "Please enter a valid phone number";
+                  //       }
+                  //       return null;
+                  //     },
+                  //   ),
+                  // ),
                   _inputField(
                     TextFormField(
                       decoration: const InputDecoration(
@@ -134,16 +155,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _inputField(Widget widget) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 0.0,
-        vertical: 10.0,
-      ),
-      child: widget,
     );
   }
 }
