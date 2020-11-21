@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:contact_picker/contact_picker.dart';
-import "package:flutter/foundation.dart";
 
 class User {
   String name;

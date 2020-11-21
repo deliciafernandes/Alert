@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import "package:flutter/material.dart";
-import 'package:path/path.dart';
 
 class ImagePreviewScreen extends StatefulWidget {
   final String imagePath;
