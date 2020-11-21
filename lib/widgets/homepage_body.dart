@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:road_safety/utilities/routing_constants.dart';
 import 'package:road_safety/widgets/reusable_emergency_container.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomePageBody extends StatefulWidget {
   @override

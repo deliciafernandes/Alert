@@ -13,9 +13,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case kCameraScreen:
       return MaterialPageRoute(builder: (_) => CameraScreen());
     case kLoginScreen:
-      return MaterialPageRoute(builder: (_) => LoginScreen());
+      return MaterialPageRoute(builder: (_) => LoginScreenBody());
     case kRegisterScreen:
-      return MaterialPageRoute(builder: (_) => RegisterScreen());
+      return MaterialPageRoute(builder: (_) => RegisterScreenBody());
     default:
       return MaterialPageRoute(
         builder: (_) => UndefinedView(pageName: settings.name),

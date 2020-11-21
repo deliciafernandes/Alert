@@ -21,6 +21,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Color(0xfffafafa),
@@ -34,7 +35,7 @@ class _MainPageState extends State<MainPage> {
         titleSpacing: 0.0,
         title: Text(
           'Andheri East, Mumbai.', //TODO: add location functionality
-          style: TextStyle(color: Colors.grey[400]),
+          style: TextStyle(color: Colors.grey[400], fontSize: 18.0),
         ),
         actions: [
           IconButton(

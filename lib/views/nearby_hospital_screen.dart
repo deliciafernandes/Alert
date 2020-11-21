@@ -110,7 +110,6 @@ class _NearbyHospitalScreenState extends State<NearbyHospitalScreen> {
                       );
                     }).toList(),
                   );
-                  return Text("test");
                 },
               ),
       ),
