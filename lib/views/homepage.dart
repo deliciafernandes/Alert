@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:road_safety/utilities/constants.dart';
 import 'package:road_safety/widgets/homepage_body.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(
               Icons.info_rounded,
               size: 28,
-              color: Color(0xffe45858),
+              color: kMainRed,
             ),
             onPressed: () {
               //TODO: add map functionality
@@ -68,7 +69,7 @@ class _HomePageState extends State<HomePage> {
           elevation: 0,
           currentIndex: _index,
           backgroundColor: Colors.transparent,
-          selectedItemColor: Color(0xffe45858),
+          selectedItemColor: kMainRed,
           iconSize: 20.0,
           onTap: (int index) {
             setState(() {
@@ -79,10 +80,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.local_hospital), label: "Hospitals"),
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.face),
-                label: ""
-                    "Account"),
+            BottomNavigationBarItem(icon: Icon(Icons.face), label: "Account"),
           ],
         ),
       ),
