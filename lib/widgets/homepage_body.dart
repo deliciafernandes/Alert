@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:road_safety/utilities/routing_constants.dart';
 import 'package:road_safety/widgets/reusable_emergency_container.dart';
 
 class HomePageBody extends StatefulWidget {
@@ -72,7 +73,7 @@ class _HomePageBodyState extends State<HomePageBody>
               SizedBox(height: 30.0),
               GestureDetector(
                 onTap: () {
-                  //TODO: add camera functionality
+                  Navigator.pushNamed(context, kCameraScreen);
                 },
                 child: Container(
                   margin: EdgeInsets.only(top: 30.0, bottom: 15.0),

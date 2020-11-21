@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import "package:camera/camera.dart";
 import "package:path/path.dart";
 import "package:permission_handler/permission_handler.dart";
+import 'package:road_safety/utilities/constants.dart';
 
 // screens
 import 'image_preview_screen.dart';
@@ -89,36 +90,6 @@ class _CameraScreenState extends State<CameraScreen> {
     print('Error: ${e.code}\n${e.description}');
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Camera'),
-      ),
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: _cameraPreviewWidget(),
-            ),
-            SizedBox(height: 10.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                _cameraTogglesRowWidget(),
-                _captureControlRowWidget(context),
-                Spacer()
-              ],
-            ),
-            SizedBox(height: 20.0)
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget _captureControlRowWidget(context) {
     return Expanded(
       child: Align(
@@ -128,6 +99,7 @@ class _CameraScreenState extends State<CameraScreen> {
           mainAxisSize: MainAxisSize.max,
           children: [
             FloatingActionButton(
+                backgroundColor: kMainRed,
                 child: Icon(Icons.camera),
                 onPressed: () {
                   _onCapturePressed(context);
@@ -169,7 +141,10 @@ class _CameraScreenState extends State<CameraScreen> {
         alignment: Alignment.centerLeft,
         child: FlatButton.icon(
             onPressed: _onSwitchCamera,
-            icon: Icon(_getCameraLensIcon(lensDirection)),
+            icon: Icon(
+              _getCameraLensIcon(lensDirection),
+              color: kMainRed,
+            ),
             label: Text(
                 "${lensDirection.toString().substring(lensDirection.toString().indexOf('.') + 1)}")),
       ),
@@ -218,5 +193,36 @@ class _CameraScreenState extends State<CameraScreen> {
       default:
         return Icons.device_unknown;
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xfffafafa),
+        leading: BackButton(color: kMainRed),
+      ),
+      body: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: _cameraPreviewWidget(),
+            ),
+            SizedBox(height: 10.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                _cameraTogglesRowWidget(),
+                _captureControlRowWidget(context),
+                Spacer()
+              ],
+            ),
+            SizedBox(height: 20.0)
+          ],
+        ),
+      ),
+    );
   }
 }

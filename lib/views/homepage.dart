@@ -10,9 +10,9 @@ class _HomePageState extends State<HomePage> {
   int _index = 1;
 
   List<Widget> _widgetList = [
+    HomePageBody(), // HospitalPageBody()
     HomePageBody(),
-    HomePageBody(),
-    HomePageBody(),
+    HomePageBody(), // AccountPageBody()
   ];
 
   @override
