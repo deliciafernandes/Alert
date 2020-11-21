@@ -11,6 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  path_provider: ^1.6.24
+  path: ^1.7.0
+  camera: ^0.5.8+11
+  permission_handler: ^5.0.1+1
 
   cupertino_icons: ^1.0.0
   flutter_screenutil: ^3.2.0

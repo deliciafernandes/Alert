@@ -3,8 +3,6 @@ import 'package:road_safety/utilities/app_theme.dart';
 import 'package:road_safety/utilities/routing_constants.dart';
 import 'utilities/router.dart' as router;
 
-void main() => runApp(AlertApp());
-
 class AlertApp extends StatefulWidget {
   @override
   _AlertAppState createState() => _AlertAppState();
