@@ -73,18 +73,13 @@ class _HomePageBodyState extends State<HomePageBody>
                   runSpacing: 20.0,
                   children: [
                     ReusableEmergencyContainer(
-                      emergency: 'Ambulance',
-                      phoneNumber: "102",
-                    ),
+                        emergency: 'Ambulance', phoneNumber: "102"),
                     ReusableEmergencyContainer(
-                      emergency: 'Fire',
-                      phoneNumber: "101",
-                    ),
+                        emergency: 'Fire', phoneNumber: "101"),
                     ReusableEmergencyContainer(
-                      emergency: 'Police',
-                      phoneNumber: "100",
-                    ),
-                    ReusableEmergencyContainer(emergency: 'Road Accident'),
+                        emergency: 'Police', phoneNumber: "100"),
+                    ReusableEmergencyContainer(
+                        emergency: 'Road Accident', phoneNumber: "1073"),
                   ],
                 ),
                 SizedBox(height: 30.0),
