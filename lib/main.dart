@@ -3,14 +3,14 @@ import 'package:road_safety/utilities/app_theme.dart';
 import 'package:road_safety/utilities/routing_constants.dart';
 import 'utilities/router.dart' as router;
 
-void main() => runApp(MyApp());
+void main() => runApp(AlertApp());
 
-class MyApp extends StatefulWidget {
+class AlertApp extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _AlertAppState createState() => _AlertAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _AlertAppState extends State<AlertApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
