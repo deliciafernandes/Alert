@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage>
                       ReusableEmergencyContainer(emergency: 'Road Accident'),
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 30.0),
                   GestureDetector(
                     onTap: () {
                       //TODO: add camera functionality
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage>
                       margin: EdgeInsets.only(top: 30.0, bottom: 15.0),
                       child: Image.asset(
                         'assets/images/camera.png',
-                        width: 80.0,
+                        width: 70.0,
                         fit: BoxFit.contain,
                       ),
                       decoration: BoxDecoration(

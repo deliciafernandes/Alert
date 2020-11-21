@@ -23,12 +23,13 @@ class ReusableEmergencyContainer extends StatelessWidget {
           children: [
             Image.asset(
               'assets/images/$emergency.png',
-              width: 60.0,
+              width: 80.0,
+              height: 80.0,
             ),
             SizedBox(height: 15.0),
             Text(
               emergency,
-              style: TextStyle(fontSize: 20.0, color: Colors.black87),
+              style: TextStyle(fontSize: 18.0, color: Colors.black87),
             ),
           ],
         ),
