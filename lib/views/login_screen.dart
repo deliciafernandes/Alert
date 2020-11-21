@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 
 // screens
@@ -13,9 +14,13 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   Future<void> _submit() async {
     // Perform submit action
 
+    print(_emailController);
+    print(_passwordController);
     if (_formKey.currentState.validate()) {
       // Form validation success
     }
