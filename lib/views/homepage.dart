@@ -1,3 +1,4 @@
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -6,6 +7,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _index = 1;
+
+  // List<Widget> _widgetList = [
+  //   WhatToDoBody(),
+  // ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +43,39 @@ class _HomePageState extends State<HomePage> {
             },
           ),
         ],
+      ),
+      extendBody: true,
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(40.0),
+        ),
+        child: Material(
+          elevation: 8.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
+          child: BottomNavigationBar(
+            elevation: 0,
+            currentIndex: _index,
+            backgroundColor: Colors.transparent,
+            selectedItemColor: Color(0xffe45858),
+            iconSize: 20.0,
+            onTap: (int index) {
+              setState(() {
+                _index = index;
+              });
+            },
+            items: [
+              BottomNavigationBarItem(icon: Icon(Icons.add), label: "Feature"),
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.face),
+                  label: ""
+                      "Account"),
+            ],
+          ),
+        ),
       ),
     );
   }
