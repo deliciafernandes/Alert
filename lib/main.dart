@@ -17,8 +17,8 @@ class _AlertAppState extends State<AlertApp> {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       onGenerateRoute: router.generateRoute,
-      // initialRoute: kHomePage,
-      initialRoute: kLoginScreen,
+      initialRoute: kHomePage,
+      // initialRoute: kLoginScreen,
       // initialRoute: kRegisterScreen,
     );
   }

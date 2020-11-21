@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _index = 2;
+  int _index = 1;
 
   List<Widget> _widgetList = [
     NearbyHospitalScreen(),
