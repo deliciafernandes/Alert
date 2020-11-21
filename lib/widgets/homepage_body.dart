@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:road_safety/utilities/routing_constants.dart';
 import 'package:road_safety/widgets/reusable_emergency_container.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePageBody extends StatefulWidget {
   @override
@@ -71,9 +72,18 @@ class _HomePageBodyState extends State<HomePageBody>
                   spacing: 20.0,
                   runSpacing: 20.0,
                   children: [
-                    ReusableEmergencyContainer(emergency: 'Ambulance'),
-                    ReusableEmergencyContainer(emergency: 'Fire'),
-                    ReusableEmergencyContainer(emergency: 'Police'),
+                    ReusableEmergencyContainer(
+                      emergency: 'Ambulance',
+                      phoneNumber: "102",
+                    ),
+                    ReusableEmergencyContainer(
+                      emergency: 'Fire',
+                      phoneNumber: "101",
+                    ),
+                    ReusableEmergencyContainer(
+                      emergency: 'Police',
+                      phoneNumber: "100",
+                    ),
                     ReusableEmergencyContainer(emergency: 'Road Accident'),
                   ],
                 ),
