@@ -24,6 +24,12 @@ class _HomePageBodyState extends State<HomePageBody>
   }
 
   @override
+  dispose() {
+    _animationController.dispose(); // you need this
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 20.0, bottom: 20.0),

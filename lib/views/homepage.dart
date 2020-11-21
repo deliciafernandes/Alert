@@ -12,6 +12,7 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> _widgetList = [
     NearbyHospitalScreen(),
+    // HomePageBody(),
     HomePageBody(),
     HomePageBody(),
   ];
