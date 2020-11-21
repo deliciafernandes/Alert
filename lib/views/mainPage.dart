@@ -10,7 +10,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _index = 1;
+  int _index = 2;
 
   List<Widget> _widgetList = [
     NearbyHospitalScreen(),
@@ -29,12 +29,12 @@ class _MainPageState extends State<MainPage> {
         centerTitle: false,
         leading: Icon(
           Icons.location_on,
-          color: Colors.grey[500],
+          color: Colors.grey[400],
         ),
         titleSpacing: 0.0,
         title: Text(
           'Andheri East, Mumbai.', //TODO: add location functionality
-          style: TextStyle(color: Colors.grey[500]),
+          style: TextStyle(color: Colors.grey[400]),
         ),
         actions: [
           IconButton(

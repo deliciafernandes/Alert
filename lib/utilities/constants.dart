@@ -10,3 +10,4 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // );
 
 const Color kMainRed = Color(0xffe55858);
+const Color kLightRed = Color(0xffFF6161);
