@@ -4,9 +4,8 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:road_safety/utilities/constants.dart';
 
 // screens
+import 'forgot_password_screen.dart';
 import 'register_screen.dart';
-
-//TODO FORGOT PASSWORD
 
 class LoginScreenBody extends StatefulWidget {
   @override
@@ -75,10 +74,13 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                   fontFamily: 'Merriweather',
                 ),
               ),
-              Image.asset(
-                'assets/images/laying.png',
-                width: MediaQuery.of(context).size.width / 1.8,
-                height: MediaQuery.of(context).size.width / 1.8,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30.0),
+                child: Image.asset(
+                  'assets/images/laying.png',
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  height: MediaQuery.of(context).size.width / 2.5,
+                ),
               ),
               Form(
                 key: _formKey,
@@ -117,7 +119,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20.0, bottom: 30.0),
+                      padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
                       child: Material(
                         elevation: 3.0,
                         shape: RoundedRectangleBorder(
@@ -149,6 +151,24 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                         ),
                       ),
                     ),
+                    GestureDetector(
+                      child: Text(
+                        "Forgot Password?",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ForgotPassword(),
+                          ),
+                        );
+                      },
+                    ),
+                    SizedBox(height: 30.0),
                     RaisedButton(
                       elevation: 10.0,
                       shape: RoundedRectangleBorder(
