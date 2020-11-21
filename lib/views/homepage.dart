@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:road_safety/widgets/reusable_emergency_container.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -62,56 +63,58 @@ class _HomePageState extends State<HomePage>
         padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
               children: [
                 FadeTransition(
                   opacity: _animationController
                       .drive(CurveTween(curve: Curves.easeOut)),
-                  child: Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 5.0, horizontal: 40.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xffe8f4fa),
-                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  child: Material(
+                    elevation: 3.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
                     ),
-                    child: Text(
-                      'Emergency Drill',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 5.0, horizontal: 40.0),
+                      decoration: BoxDecoration(
+                        color: Color(0xffe8f4fa),
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      ),
+                      child: Text(
+                        'Emergency Drill',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                SizedBox(height: 30.0),
+                Wrap(
+                  spacing: 20.0,
+                  runSpacing: 20.0,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.all(15.0),
-                      padding: const EdgeInsets.all(3.0),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.blueAccent)),
-                      child: Text("My Awesome Border"),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(15.0),
-                      padding: const EdgeInsets.all(3.0),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.blueAccent)),
-                      child: Text("My Awesome Border"),
-                    )
+                    ReusableEmergencyContainer(emergency: 'Ambulance'),
+                    ReusableEmergencyContainer(emergency: 'Fire'),
+                    ReusableEmergencyContainer(emergency: 'Police'),
+                    ReusableEmergencyContainer(emergency: 'Ambulance'),
                   ],
                 ),
+                SizedBox(height: 20.0),
                 GestureDetector(
                   onTap: () {
                     //TODO: add camera functionality
                   },
                   child: Container(
-                    width: 200,
-                    height: 130,
                     margin: EdgeInsets.only(top: 30.0, bottom: 15.0),
-                    // child: Image.asset('assets/images/alert_icon.png'),
+                    child: Image.asset(
+                      'assets/images/camera.png',
+                      width: 80.0,
+                      fit: BoxFit.contain,
+                    ),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       boxShadow: [
