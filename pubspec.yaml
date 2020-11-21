@@ -15,8 +15,6 @@ dependencies:
   cupertino_icons: ^1.0.0
   flutter_screenutil: ^3.2.0
 
-  floating_bottom_navigation_bar: ^1.4.1
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
