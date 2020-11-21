@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:road_safety/widgets/homepage_body.dart';
+import "./nearby_hospital_screen.dart";
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,9 +11,10 @@ class _HomePageState extends State<HomePage> {
   int _index = 1;
 
   List<Widget> _widgetList = [
-    HomePageBody(), // HospitalPageBody()
+    NearbyHospitalScreen(),
+    // HomePageBody(),
     HomePageBody(),
-    HomePageBody(), // AccountPageBody()
+    HomePageBody(),
   ];
 
   @override
