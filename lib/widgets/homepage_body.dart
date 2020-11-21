@@ -68,8 +68,8 @@ class _HomePageBodyState extends State<HomePageBody>
                 ),
                 SizedBox(height: 30.0),
                 Wrap(
-                  spacing: 20.0,
-                  runSpacing: 20.0,
+                  spacing: 25.0,
+                  runSpacing: 25.0,
                   children: [
                     ReusableEmergencyContainer(
                         emergency: 'Ambulance', phoneNumber: "102"),
@@ -81,7 +81,7 @@ class _HomePageBodyState extends State<HomePageBody>
                         emergency: 'Road Accident', phoneNumber: "1073"),
                   ],
                 ),
-                SizedBox(height: 30.0),
+                SizedBox(height: 50.0),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, kCameraScreen);

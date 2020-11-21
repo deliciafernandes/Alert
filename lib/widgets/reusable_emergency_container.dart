@@ -23,7 +23,7 @@ class ReusableEmergencyContainer extends StatelessWidget {
     return InkWell(
       onTap: () {
         if (this.phoneNumber != null) {
-          _launchURL("tel:"+this.phoneNumber);
+          _launchURL("tel:" + this.phoneNumber);
         }
       },
       child: Material(
@@ -43,12 +43,15 @@ class ReusableEmergencyContainer extends StatelessWidget {
               Image.asset(
                 'assets/images/$emergency.png',
                 width: 80.0,
-                height: 80.0,
+                height: 60.0,
               ),
               SizedBox(height: 15.0),
               Text(
                 emergency,
-                style: TextStyle(fontSize: 18.0, color: Colors.black87),
+                style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.black54,
+                    fontWeight: FontWeight.w700),
               ),
             ],
           ),
