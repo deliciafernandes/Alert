@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 import "package:camera/camera.dart";
 import "package:path/path.dart";
 import "package:permission_handler/permission_handler.dart";
@@ -33,20 +34,24 @@ class _CameraScreenState extends State<CameraScreen> {
       print(status);
     });
 
-    availableCameras().then((availableCameras) {
-      cameras = availableCameras;
-      if (cameras.length > 0) {
-        setState(() {
-          selectedCameraIndex = 0;
-        });
+    if (status == PermissionStatus.granted) {
+      availableCameras().then((availableCameras) {
+        cameras = availableCameras;
+        if (cameras.length > 0) {
+          setState(() {
+            selectedCameraIndex = 0;
+          });
 
-        _initCameraController(cameras[selectedCameraIndex]).then((void v) {});
-      } else {
-        print("No camera available");
-      }
-    }).catchError((err) {
-      print("Error: $err.code\nError Message: $err.message");
-    });
+          _initCameraController(cameras[selectedCameraIndex]).then((void v) {});
+        } else {
+          print("No camera available");
+        }
+      }).catchError((err) {
+        print("Error: $err.code\nError Message: $err.message");
+      });
+    } else {
+      SystemNavigator.pop();
+    }
   }
 
   Future _initCameraController(CameraDescription cameraDescription) async {
