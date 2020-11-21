@@ -4,12 +4,12 @@ import 'package:road_safety/views/account.dart';
 import 'package:road_safety/widgets/homepage_body.dart';
 import "./nearby_hospital_screen.dart";
 
-class HomePage extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainPageState extends State<MainPage> {
   int _index = 1;
 
   List<Widget> _widgetList = [
