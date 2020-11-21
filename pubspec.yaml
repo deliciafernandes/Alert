@@ -11,6 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  contact_picker: ^0.0.2
   path_provider: ^1.6.24
   path: ^1.7.0
   camera: ^0.5.8+11
