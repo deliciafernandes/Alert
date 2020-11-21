@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 
 // screens
-import './register_screen.dart';
+import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -19,6 +19,16 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_formKey.currentState.validate()) {
       // Form validation success
     }
+  }
+
+  Widget _inputField(Widget widget) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 0.0,
+        vertical: 10.0,
+      ),
+      child: widget,
+    );
   }
 
   @override
@@ -95,16 +105,6 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _inputField(Widget widget) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 0.0,
-        vertical: 10.0,
-      ),
-      child: widget,
     );
   }
 }
