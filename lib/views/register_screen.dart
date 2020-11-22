@@ -77,7 +77,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
       color: Colors.transparent,
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(22.0),
+          padding: EdgeInsets.only(top: 5.0, left: 22.0, right: 22.0),
           // padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -104,8 +104,8 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
               SizedBox(height: 30.0),
               Image.asset(
                 'assets/images/coffee.png',
-                width: MediaQuery.of(context).size.width / 1.85,
-                height: MediaQuery.of(context).size.width / 1.85,
+                width: MediaQuery.of(context).size.width / 3,
+                height: MediaQuery.of(context).size.width / 3,
               ),
               Form(
                 key: _formKey,
@@ -144,7 +144,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
+                      padding: const EdgeInsets.only(top: 15.0),
                       child: Material(
                         elevation: 3.0,
                         shape: RoundedRectangleBorder(
@@ -178,7 +178,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
+                      padding: const EdgeInsets.only(top: 15.0),
                       child: Material(
                         elevation: 3.0,
                         shape: RoundedRectangleBorder(
@@ -212,7 +212,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20.0, bottom: 30.0),
+                      padding: const EdgeInsets.only(top: 15.0, bottom: 20.0),
                       child: Material(
                         elevation: 3.0,
                         shape: RoundedRectangleBorder(
