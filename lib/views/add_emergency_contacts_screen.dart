@@ -84,6 +84,4 @@ class _AddEmergencyContactsScreenState
       }).toList(),
     );
   }
-
-
 }

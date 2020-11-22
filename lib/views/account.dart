@@ -20,21 +20,21 @@ class _AccountPageState extends State<AccountPage> {
         Provider.of<UserProvider>(context, listen: false);
 
     User user = userProvider.user;
-    return userProvider.getUid() == null
-        ? RegisterScreenBody()
-        : Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Text(user.name),
-                Text(user.phone),
-                Text(user.email),
-                getContactList(user.emergencyContacts),
-              ],
-            ),
-          );
+    // return userProvider.getUid() == null
+    //     ? RegisterScreenBody()
+    //     : Container(
+    //         child: Column(
+    //           crossAxisAlignment: CrossAxisAlignment.stretch,
+    //           children: <Widget>[
+    //             Text(user.name),
+    //             Text(user.phone),
+    //             Text(user.email),
+    //             getContactList(user.emergencyContacts),
+    //           ],
+    //         ),
+    //       );
 
-    // return RegisterScreenBody();
+    return RegisterScreenBody();
   }
 
   Widget getContactList(List<Contact> contacts) {
