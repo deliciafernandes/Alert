@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:road_safety/providers/user_provider.dart';
 import 'package:road_safety/utilities/constants.dart';
+import 'package:road_safety/utilities/location.dart';
 import 'package:road_safety/views/account.dart';
 import 'package:road_safety/widgets/homepage_body.dart';
 import "./nearby_hospital_screen.dart";
@@ -17,9 +18,17 @@ class _MainPageState extends State<MainPage> {
   int _index = 1;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  LocationService locationService = LocationService();
+  var userLocation;
+  void getLocationData() async {
+//  Fetching _userLocation
+    userLocation = await locationService.getLocation();
+  }
+
   void initState() {
     super.initState();
 
+    getLocationData();
     fetchData();
   }
 
@@ -44,6 +53,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(userLocation);
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(

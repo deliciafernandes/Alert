@@ -6,7 +6,6 @@ import 'package:road_safety/views/mainPage.dart';
 
 // screens
 import 'forgot_password_screen.dart';
-import 'register_screen.dart';
 
 class LoginScreenBody extends StatefulWidget {
   @override
@@ -223,12 +222,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                               ),
                             ),
                             onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => RegisterScreenBody(),
-                                ),
-                              );
+                              Navigator.pop(context);
                             },
                           ),
                         ],
