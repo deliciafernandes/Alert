@@ -81,15 +81,32 @@ class _NearbyHospitalScreenState extends State<NearbyHospitalScreen> {
       child: SingleChildScrollView(
         physics: AlwaysScrollableScrollPhysics(),
         child: _locationData == null
-            ? Center(
-                child: Text("Allow location permission to view"),
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 100,
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Allow location permission to view",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               )
             : FutureBuilder(
                 future: _fetchHospitals(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    // loading results
-                    return Text("Loading");
+                    return LinearProgressIndicator();
                   } else if (snapshot.hasError) {
                     Text(snapshot.error);
                   }
