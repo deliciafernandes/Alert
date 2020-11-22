@@ -17,8 +17,8 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
   final _formKey = GlobalKey<FormState>();
   bool _showSpinner = false;
 
-  // final _nameController = TextEditingController();
-  // final _phoneController = TextEditingController();
+  final _nameController = TextEditingController();
+  final _carPlateController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -51,12 +51,12 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
       }
 
       // if everything was a success
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(
-      //     builder: (context) => AddEmergencyContactsScreen(),
-      //   ),
-      // );
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => AddEmergencyContactsScreen(),
+        ),
+      );
     }
   }
 
@@ -119,7 +119,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                       ),
                       child: TextFormField(
                         decoration: const InputDecoration(
-                          labelText: "Email",
+                          labelText: "Name",
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
@@ -128,19 +128,87 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                           contentPadding: EdgeInsets.only(
                               left: 15, bottom: 11, top: 11, right: 15),
                         ),
-                        controller: _emailController,
+                        controller: _nameController,
                         textInputAction: TextInputAction.next,
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.name,
                         cursorColor: Colors.black,
                         validator: (value) {
                           if (value.isEmpty) {
                             setState(() {
                               _showSpinner = false;
                             });
-                            return "Please enter email";
+                            return "Please enter name";
                           }
                           return null;
                         },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20.0),
+                      child: Material(
+                        elevation: 3.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: "Car Plate Number",
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            contentPadding: EdgeInsets.only(
+                                left: 15, bottom: 11, top: 11, right: 15),
+                          ),
+                          controller: _carPlateController,
+                          textInputAction: TextInputAction.next,
+                          keyboardType: TextInputType.emailAddress,
+                          cursorColor: Colors.black,
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              setState(() {
+                                _showSpinner = false;
+                              });
+                              return "Please enter car plate number";
+                            }
+                            return null;
+                          },
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20.0),
+                      child: Material(
+                        elevation: 3.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: "Email",
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            contentPadding: EdgeInsets.only(
+                                left: 15, bottom: 11, top: 11, right: 15),
+                          ),
+                          controller: _emailController,
+                          textInputAction: TextInputAction.next,
+                          keyboardType: TextInputType.emailAddress,
+                          cursorColor: Colors.black,
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              setState(() {
+                                _showSpinner = false;
+                              });
+                              return "Please enter email";
+                            }
+                            return null;
+                          },
+                        ),
                       ),
                     ),
                     Padding(
@@ -223,6 +291,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                         ),
                       ],
                     ),
+                    SizedBox(height: 100.0),
                   ],
                 ),
               ),
