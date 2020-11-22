@@ -59,7 +59,7 @@ class _NearbyHospitalScreenState extends State<NearbyHospitalScreen> {
       http.Response response = await http.get(requestUrl);
       if (response.statusCode == 200) {
         final extractedData = jsonDecode(response.body);
-
+        print(extractedData);
         _hospitals = extractedData["results"].map<Hospital>((data) {
           return Hospital.fromJson(data);
         }).toList();
@@ -70,7 +70,6 @@ class _NearbyHospitalScreenState extends State<NearbyHospitalScreen> {
   }
 
   Future<void> _rebuild() async {
-    print("HERE");
     setState(() {});
   }
 

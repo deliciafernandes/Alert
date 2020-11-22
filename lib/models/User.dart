@@ -19,8 +19,8 @@ class User {
        * Remember that Contact takes paramerters fullName and phoneNumber
        * where phoneNumber is a map of number and label('work', 'home', etc)
        */
-      emergencyContacts: jsonData["emergencyContacts"].map((item) {
-        Contact.fromMap(item);
+      emergencyContacts: jsonData["emergencyContacts"].map<Contact>((item) {
+        return Contact.fromMap(item);
       }).toList(),
     );
   }

@@ -1,8 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:road_safety/providers/user_provider.dart';
 import 'package:road_safety/utilities/constants.dart';
 import 'package:road_safety/views/account.dart';
 import 'package:road_safety/widgets/homepage_body.dart';
 import "./nearby_hospital_screen.dart";
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -11,6 +15,26 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _index = 1;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void initState() {
+    super.initState();
+
+    fetchData();
+  }
+
+  Future<void> handleAuth() async {
+    // print();
+  }
+
+  Future<void> fetchData() async {
+    final firestoreInstance = FirebaseFirestore.instance;
+
+    Provider.of<UserProvider>(
+      context,
+      listen: false,
+    ).fetchCurrentUser();
+  }
 
   List<Widget> _widgetList = [
     NearbyHospitalScreen(),
@@ -45,7 +69,7 @@ class _MainPageState extends State<MainPage> {
               color: kMainRed,
             ),
             onPressed: () {
-              //TODO: add map functionality
+              fetchData();
             },
           ),
         ],

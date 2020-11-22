@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
+import 'package:road_safety/providers/user_provider.dart';
 import 'package:road_safety/utilities/constants.dart';
 import 'package:road_safety/views/login_screen.dart';
 
@@ -36,6 +38,8 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
           email: _emailController.text,
           password: _passwordController.text,
         );
+        print("here");
+        Provider.of<UserProvider>(context, listen: false).addUser();
         setState(() {
           _showSpinner = false;
         });
@@ -209,12 +213,12 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                             ),
                           ),
                           onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => LoginScreenBody(),
-                            //   ),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginScreenBody(),
+                              ),
+                            );
                           },
                         ),
                       ],

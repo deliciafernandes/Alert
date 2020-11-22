@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:road_safety/providers/user_provider.dart';
 import 'package:road_safety/utilities/app_theme.dart';
 import 'package:road_safety/utilities/routing_constants.dart';
 import 'utilities/router.dart' as router;
@@ -7,7 +9,17 @@ import 'utilities/router.dart' as router;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(AlertApp());
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<UserProvider>(
+          create: (_) => UserProvider(),
+        ),
+      ],
+      child: AlertApp(),
+    ),
+  );
 }
 
 class AlertApp extends StatefulWidget {
